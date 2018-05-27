@@ -1,4 +1,4 @@
-package typeclasses
+package chapter1.typeclasses
 
 sealed trait Json
 final case class JsObject(get: Map[String, Json]) extends Json

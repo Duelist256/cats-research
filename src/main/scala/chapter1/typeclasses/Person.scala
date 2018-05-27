@@ -1,4 +1,4 @@
-package typeclasses
+package chapter1.typeclasses
 
 final case class Person(name: String, email: String)
 
