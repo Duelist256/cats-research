@@ -1,5 +1,7 @@
 package part1.chapter1.show
 
+import part1.chapter1.Cat
+
 object Main {
   def main(args: Array[String]): Unit = {
     import cats.Show
@@ -24,5 +26,9 @@ object Main {
 
     val a = ShowInstances.toStringShow[Double]
     println(a.show(10.2))
+
+    import ShowInstances.catShow
+    val cat = Cat("Garfield", 38, "ginger and black")
+    println(cat.show)
   }
 }
