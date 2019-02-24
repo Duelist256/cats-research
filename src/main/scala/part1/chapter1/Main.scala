@@ -12,7 +12,12 @@ object Main {
     val personJson2 = Person("Joe", "joe@example.com").toJson
     println(personJson2)
 
+    // implicitly examples
     println(implicitly[JsonWriter[String]])
     println(implicitly[JsonWriter[Person]])
+
+    // Recursive implicit resolution
+    val option: Option[String] = Option("String")
+    Json.toJson(option)
   }
 }
