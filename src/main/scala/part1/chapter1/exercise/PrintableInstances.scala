@@ -1,5 +1,7 @@
 package part1.chapter1.exercise
 
+import part1.chapter1.Cat
+
 object PrintableInstances {
   implicit val stringPrintable: Printable[String] = new Printable[String] {
     override def format(value: String): String = value

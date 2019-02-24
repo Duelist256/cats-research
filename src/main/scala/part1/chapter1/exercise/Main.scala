@@ -1,5 +1,7 @@
 package part1.chapter1.exercise
 
+import part1.chapter1.Cat
+
 object Main {
   def main(args: Array[String]): Unit = {
     import PrintableInstances._
