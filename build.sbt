@@ -1,4 +1,4 @@
-name := "cats_research"
+name := "cats-sandbox"
 
 version := "0.1"
 
