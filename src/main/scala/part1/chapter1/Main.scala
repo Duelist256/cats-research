@@ -17,7 +17,8 @@ object Main {
     println(implicitly[JsonWriter[Person]])
 
     // Recursive implicit resolution
-    val option: Option[String] = Option("String")
-    Json.toJson(option)
+    val option: Option[String] = Option("A string")
+    val optionJson = Json.toJson(option)
+    println(optionJson)
   }
 }
