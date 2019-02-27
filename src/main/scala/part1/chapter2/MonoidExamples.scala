@@ -25,5 +25,16 @@ object MonoidExamples {
     import cats.syntax.semigroup._
     val stringResult = "Hi " |+| "there" |+| Monoid[String].empty
     println(stringResult)
+
+    import cats.instances.map._
+    val map1 = Map("a" -> 1, "b" -> 2)
+    val map2 = Map("c" -> 3, "d" -> 4)
+
+    println(map1 |+| map2)
+
+    import cats.instances.tuple._
+    val tuple1 = ("hello", 123)
+    val tuple2 = ("world", 321)
+    println(tuple1 |+| tuple2)
   }
 }
