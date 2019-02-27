@@ -59,9 +59,9 @@ object Monoids {
     override def combine(a: Set[A], b: Set[A]): Set[A] = a intersect b
   }
 
-  implicit def symDiffMonoid[A]: Monoid[Set[A]] = new Monoid[Set[A]] {
-    override def empty: Set[A] = Set.empty
-    override def combine(a: Set[A], b: Set[A]): Set[A] = (a diff b) union (b diff a)
-  }
+//  implicit def symDiffMonoid[A]: Monoid[Set[A]] = new Monoid[Set[A]] {
+//    override def empty: Set[A] = Set.empty
+//    override def combine(a: Set[A], b: Set[A]): Set[A] = (a diff b) union (b diff a)
+//  }
 
 }
