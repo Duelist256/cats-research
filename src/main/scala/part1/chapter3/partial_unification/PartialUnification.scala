@@ -24,6 +24,6 @@ object PartialUnification {
     type <=[B, A] = A => B
     type F[A] = Double <= A
     val func2b: Double <= Double = func2
-//    val func3c = func2b.contamap(func1)
+//    val func3c = func2b.contamap(func1) // it would compile
   }
 }
