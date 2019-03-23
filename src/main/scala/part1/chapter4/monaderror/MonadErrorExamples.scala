@@ -7,15 +7,15 @@ object MonadErrorExamples {
 
     type ErrorOr[A] = Either[String, A]
 
-    val monadError = MonadError[ErrorOr, String]
+    val monadError: MonadError[ErrorOr, String] = MonadError[ErrorOr, String]
 
-    val success = monadError.pure(41)
+    val success: ErrorOr[Int] = monadError.pure(41)
     println(success)
 
     val failure: ErrorOr[Nothing] = monadError.raiseError("Badness")
     println(failure)
 
-    val result =
+    val result: ErrorOr[ErrorOr[String]] =
       monadError.handleError(failure) {
         case "Badness" =>
           monadError.pure("It's OK ")
@@ -24,6 +24,9 @@ object MonadErrorExamples {
       }
     println(result)
 
-    println(monadError.ensure(success)("Number too low!")(_ > 1000))
+    val ok: ErrorOr[Int] = monadError.ensure(success)("Number too low!")(_ > 10)
+    println(ok)
+    val fail: ErrorOr[Int] = monadError.ensure(success)("Number too low!")(_ > 1000)
+    println(fail)
   }
 }
