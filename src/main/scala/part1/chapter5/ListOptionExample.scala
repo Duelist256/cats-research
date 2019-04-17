@@ -15,9 +15,15 @@ object ListOptionExample {
     println(result2)
 
     val res =
-      result1.flatMap { x =>
-        result2.map { y => x + y}
+      result1.flatMap { x: Int =>
+        result2.map { y: Int => x + y}
       }
     println(res)
+
+    val sameRes = for {
+      x <- result1
+      y <- result2
+    } yield x + y
+    println(sameRes)
   }
 }
